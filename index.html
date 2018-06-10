@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Info</title>
+    <!-- Bootstrap file -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/cyborg/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="navbar-header">
+            <h1>Movie Information</h1>
+            <p>Search for movie details below</p>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label text-white">IMDB ID</label>
+            <div class="col-sm-3"><input class="form-control" type="text" id="imdbId"></div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label text-white">Title</label>
+            <div class="col-sm-3"><input class="form-control" type="text" id="title"></div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-sm-1 col-form-label text-white">Year</label>
+            <div class="col-sm-3"><input class="form-control" type="text" id="year"></div>
+        </div>
+
+        <div class="form-group row">
+            <div class="col-sm-4">
+                <button type="submit" class="btn btn-success" id="search" style="width: 200px;">Search movie</button>
+            </div>
+        </div>
+
+        <!-- card to display the search results -->
+        <div id="searchResults">
+            
+                <div class="card mb-3" style="width: auto;">
+                    
+                    <img class="card-img-top col-md-3" style="margin: 0.5rem;" src="" id="image">
+                    
+                    <div class="card-body">
+                    
+                        <div class="row rowStyle">
+                            <h5 class="card-title col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Title:</h5>
+                            <h5 class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="tit"></h5>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Year:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="yr"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Rated:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="rate"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Released:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="release"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Runtime:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="runt"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Genre:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="gen"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Director:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="dir"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Writer:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="writ"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Actors:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="act"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Plot:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="pl"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Language:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="lan"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Country:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="con"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Awards:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="aw"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Metascore:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="mscor"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">IMDB Rating:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="irat"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">IMDB Votes:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="ivot"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">IMDB ID:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="iid"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Type:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="typ"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">DVD:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="dv"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Box office:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="box"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Production:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="prod"></div>
+                        </div>
+    
+                        <div class="row rowStyle">
+                            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2">Website:</div>
+                            <div class="col-8 col-sm-9 col-md-10 col-lg-10 col-xl-10" id="webs"></div>
+                        </div>                
+    
+                    </div>
+                </div>
+            </div> <!-- end of searchResults by IMDB ID -->       
+    
+
+    </div> <!-- end of container class -->
+
+</body>
+
+<!-- Script files -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="index.js"></script>
+
+</html>

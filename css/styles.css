@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+.navbar-header h1 {
+    font-size: 300%;
+}
+
+.navbar-header p {
+    font-size: 150%;
+}
+
+.container {
+    padding-top: 3%;
+}
+
+.container .form-group .col-form-label {
+    font-size: 140%;
+}
+
+.container .form-group #search {
+    font-size: 140%;
+}
+
+.card-img-top .col-md-3 image {
+    border-bottom-left-radius: calc(.25rem - 1px);
+    border-top-left-radius: calc(.25rem - 1px);
+    float: left;
+    padding-right: 1em;
+    margin-bottom: -1.25em;
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    font-size: 150%;
+}
